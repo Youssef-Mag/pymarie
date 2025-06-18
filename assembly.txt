@@ -1,0 +1,30 @@
+/ multiply 2 numbers
+input
+store x /load 1st num
+input 
+store y /load 2nd num
+
+while, load count /loop y times 
+subt y
+skipcond 000
+jump end
+load count
+add one
+store count
+jns do	/jump to do
+jump while
+
+do, hex 0 /placeholder for return value
+load z
+add x /add x to itself (we will do this y times)
+store z
+output
+jumpi do /return to loop
+
+end, halt
+
+count dec 0
+one dec 1
+x dec 0
+y dec 0
+z dec 0 / our sum
